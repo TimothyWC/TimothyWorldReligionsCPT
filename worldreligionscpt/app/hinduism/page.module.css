@@ -1,0 +1,18 @@
+.heroImage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--rule);
+  min-height: 380px;
+}
+
+.siteImages {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.siteImages > * {
+  position: relative;
+}
