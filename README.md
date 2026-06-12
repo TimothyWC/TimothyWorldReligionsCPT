@@ -1,1 +1,1 @@
-# TimothyWorldReligionsCPT
+# WorldReligionsCPT
