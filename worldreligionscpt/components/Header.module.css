@@ -1,0 +1,77 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 236, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--parchment-300);
+  box-shadow: inset 0 -2px 0 var(--gold-pale), 0 1px 0 var(--parchment-300);
+}
+
+.inner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--text-strong);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.wordmark em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink-600);
+  transition: background var(--dur-base), border-color var(--dur-base), color var(--dur-base);
+}
+.navItem:hover {
+  background: var(--faith-100);
+  border-color: var(--faith-300);
+  color: var(--faith-ink);
+}
+.navItem.active {
+  background: var(--faith-100);
+  border-color: var(--faith-300);
+  color: var(--faith-ink);
+}
+
+.navGlyph {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+@media (max-width: 700px) {
+  .nav { display: none; }
+}

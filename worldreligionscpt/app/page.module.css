@@ -1,0 +1,207 @@
+/* ── Hero ───────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: clamp(5rem, 12vw, 10rem) var(--gutter) clamp(4rem, 9vw, 8rem);
+  overflow: hidden;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.heroHeadline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+.heroOf {
+  color: var(--gold-deep);
+  font-style: italic;
+}
+
+.heroLede {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 54ch;
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heroGlyphs {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.glyphBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--wash-faith);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--faith-on);
+  text-decoration: none;
+  box-shadow: 0 0 0 3px var(--gold-pale), var(--shadow-md);
+  transition: transform var(--dur-base) var(--ease-grace),
+              box-shadow var(--dur-base) var(--ease-grace);
+}
+.glyphBtn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 0 0 3px var(--gold), var(--shadow-lg);
+}
+
+/* ── Traditions Hub ─────────────────────────────────────────────── */
+.hub {
+  background: var(--parchment-100);
+}
+
+.hubHeader {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hubTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+}
+
+.hubSub {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+.faithGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ── Faith Tile ─────────────────────────────────────────────────── */
+.faithTile {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--faith-300);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur-base) var(--ease-grace),
+              box-shadow var(--dur-base) var(--ease-grace);
+}
+.faithTile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+.faithTile:hover .tileGlyph {
+  transform: scale(1.08);
+}
+.faithTile:hover .tileArrow {
+  transform: translateX(4px);
+}
+
+.tileField {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  background: var(--wash-faith);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.tileField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 -1px 0 var(--gold), inset 0 0 60px rgba(0,0,0,0.15);
+}
+
+.tileGlyph {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  color: var(--faith-on);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.25);
+  transition: transform var(--dur-slow) var(--ease-grace);
+  position: relative;
+  z-index: 1;
+}
+
+.tilePlinth {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 3px solid var(--gold);
+  flex: 1;
+}
+
+.tileNative {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--faith-ink);
+}
+
+.tileName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  color: var(--text-strong);
+  line-height: 1.05;
+}
+
+.tileDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.tileCta {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-3xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faith-ink);
+}
+
+.tileArrow {
+  transition: transform var(--dur-base) var(--ease-grace);
+}
